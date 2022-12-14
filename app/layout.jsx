@@ -1,4 +1,8 @@
-import './globals.css'
+import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+// import Sidebar from "./sidebar";
 
 export default function RootLayout({ children }) {
   return (
@@ -8,7 +12,14 @@ export default function RootLayout({ children }) {
         head.jsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+
+      <body>
+        <div className="container mx-auto py-10 flex flex-col gap-4">
+          <Header></Header>
+          {children}
+          <Footer></Footer>
+        </div>
+      </body>
     </html>
-  )
+  );
 }
